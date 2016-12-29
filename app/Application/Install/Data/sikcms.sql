@@ -40,28 +40,7 @@ INSERT INTO `chou_access` VALUES ('2', '13', '3');
 INSERT INTO `chou_access` VALUES ('2', '6', '3');
 INSERT INTO `chou_access` VALUES ('2', '5', '3');
 
--- ----------------------------
--- Table structure for chou_address
--- ----------------------------
-DROP TABLE IF EXISTS `chou_address`;
-CREATE TABLE `chou_address` (
-  `address_id` int(11) NOT NULL AUTO_INCREMENT,
-  `address_name` varchar(50) DEFAULT NULL COMMENT '名称',
-  `user_id` int(11) DEFAULT NULL,
-  `consignee` varchar(60) DEFAULT NULL COMMENT '收货人的名字',
-  `country` smallint(6) DEFAULT NULL COMMENT '收货人的国家',
-  `province` smallint(5) DEFAULT NULL COMMENT '收货人的省份',
-  `city` smallint(5) DEFAULT NULL COMMENT '收货人城市',
-  `district` smallint(5) DEFAULT NULL COMMENT '收货人的地区',
-  `mobile` varchar(15) DEFAULT NULL COMMENT '收货人的手机号',
-  `default` tinyint(1) DEFAULT '0' COMMENT '是否默认地址（0：否，1：是）',
-  PRIMARY KEY (`address_id`),
-  KEY `user_id` (`user_id`) USING BTREE
-) ENGINE=MyISAM DEFAULT CHARSET=gbk COMMENT='收货人的信息表';
 
--- ----------------------------
--- Records of chou_address
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for chou_adverts
@@ -316,27 +295,6 @@ INSERT INTO `chou_menu` VALUES ('56', '50', '模型管理', '', '2', '1', '0', '
 INSERT INTO `chou_menu` VALUES ('58', '51', '评论管理', null, '1', '1', '0', '3', 'Comment', 'index', null);
 INSERT INTO `chou_menu` VALUES ('59', '51', '添加文章', '', '1', '0', '0', '3', 'Articles', 'add', null);
 
--- ----------------------------
--- Table structure for chou_mode
--- ----------------------------
-DROP TABLE IF EXISTS `chou_mode`;
-CREATE TABLE `chou_mode` (
-  `id` mediumint(8) NOT NULL COMMENT '模型ID',
-  `typename` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '模型名称',
-  `issystem` smallint(2) DEFAULT NULL COMMENT '类型(1：系统模型 0：自动模型)',
-  `nid` varchar(50) CHARACTER SET utf8 DEFAULT '' COMMENT '标识',
-  `relation_table` varchar(50) CHARACTER SET utf8 DEFAULT NULL COMMENT '关联表',
-  `status` tinyint(2) DEFAULT '0' COMMENT '状态(1:禁用 0：正常)',
-  `addaction` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '添加方法(如:Articles/add)',
-  `editaction` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '修改方法(如:Articles/edit)',
-  `listaction` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '显示列表(如：Articles/list)',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of chou_mode
--- ----------------------------
-INSERT INTO `chou_mode` VALUES ('5', '文章', '1', 'article', 'chou_articles', '0', '{:U(\'Articles/add\')}', '{:U(\'Articles/edit\')}', '{:U(\'Articles/index\')}');
 
 -- ----------------------------
 -- Table structure for chou_module
