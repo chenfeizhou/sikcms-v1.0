@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+    <meta charset="UTF-8" />
+    <title>快乐筹cms后台登录</title>
+    <body>  
+
+        <link href="__PUBLIC__/extend/jquery-ui-bootstrap/assets/css/bootstrap.min.css" rel="stylesheet">
+        <script src="__PUBLIC__/extend/jquery-ui-bootstrap/assets/js/jquery-1.9.0.min.js" type="text/javascript"></script>
+        <script src="__PUBLIC__/extend/jquery-ui-bootstrap/assets/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="__PUBLIC__/extend/jquery-ui-bootstrap/assets/js/jquery-ui-1.10.0.custom.min.js" type="text/javascript"></script>
+        <script src="__PUBLIC__/extend/jquery-ui-bootstrap/assets/js/google-code-prettify/prettify.js" type="text/javascript"></script>   
+         <script src="__PUBLIC__/js/admin/login.js" type="text/javascript"></script>
+        <style  >
+            html{
+                height: 100%;}
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                background: none repeat scroll 0 0 #f7f8f8;
+                color: #525252;
+                font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+                font-size: 12px;
+                height: 100%;
+            }
+            .wrapper{    margin: auto; background: none repeat scroll 0 0 #66ccff;}
+            .right_content {
+                height: 40%;
+                margin: 50px auto;
+                overflow: auto;
+                position: relative;
+                width:30%;
+                padding:50px;
+
+            }
+            .rightWrap .wel_words {
+                color: #636363;
+                font-size: 22px;
+                height: 50px;
+                line-height: 50px;
+                position: relative;
+            }
+            .rightWrap .user_name, .rightWrap .input_code  {
+                background: none repeat scroll 0 0 #fff;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                color: #343d47;
+                display: block;
+                font-size: 16px;
+                height: 42px;
+                line-height: 42px;
+                margin-top: 20px;
+                padding: 0 10px;
+                width: 100%;
+            }
+            .rightWrap  .code{
+                background: none repeat scroll 0 0 #fff;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                color: #343d47;
+                display: block;
+                font-size: 16px;
+                height: 42px;
+                line-height: 42px;
+                margin-top: 20px;
+                padding: 0 10px;
+                width: 60%;      
+            }
+            .rightWrap .login {
+                background: none repeat scroll 0 0 #19aeff;
+                border-bottom: 3px solid #199ce4;
+                border-radius: 1px;
+                border-width: 0 0 3px;
+                color: #fff;
+                cursor: pointer;
+                display: block;
+                float: left;
+                font-size: 16px;
+                height: 36px;
+                line-height: 36px;
+                text-align: center;
+                text-decoration: none;
+                margin-top: 10px;
+                width: 130px;
+            }
+            .footer {
+                color: #999;
+                
+            }
+
+            .footer .inner {
+                margin: 0 auto;
+                padding: 45px 0;
+                text-align: center;
+                width: 1000px;
+            }
+            
+        </style>
+        <div class="wrapper">
+        </div>
+        <div style="background-color: #fff;" class="right_content">
+            <div class="rightWrap">
+                <div class="pageLogo"><a href="index.jsp"></a></div>
+                <p class="wel_words">欢迎登录思科CMS后台</p><p>
+                </p><form method="post"  id="loginForm" action="{:U('Public/doLogin')}">
+                    <input type="text" name="user_name" checktype="user_name" placeholder="用户名" id="signin-username" class="user_name">
+                    <input type="password" name="password" checktype="password" placeholder="密码" id="signin-password" class="input_code">
+                    <button class="login" title="提交" type="submit" id="signin-btn">登 录</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="inner">
+                <div class="copyright clearfix">
+                    <p class="copyright_en">Copyright &copy; 2015 - 2016 , SIKCMS All Rights Reserved.</p>
+                    <p class="copyright_ch"><a target="_blank" href="http://www.sikcms.cn">http://www.sikcms.cn</a></p>
+                </div>
+            </div>
+        </div>
+    </body>   
+
+</html>
